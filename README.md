@@ -78,56 +78,45 @@ ELHunter operates in a **sequential, forensic-safe workflow**:
 
 ## ▶️ Usage
 
-### 1. Launch ELHunter
+1️⃣ Download
 
-```bash
-ELHunter.exe
-2. Select Input Type
-text
-코드 복사
-[1] Single EVTX file
-[2] EVTX folder
-3. Enter Keywords
-text
-코드 복사
-usb sandisk malware
-4. Review Results
-Matches are displayed in real time
+Go to the Releases page and download the latest release archive.
+ELHunter_v1.0.zip
 
-Summary is shown after analysis completion
+2️⃣ Extract
 
-5. Save Report (Optional)
-text
-Save forensic report? (Y/N)
-If saved, the report will be generated as:
+Unzip the downloaded file to any directory.
 
-ELHunter_report.txt
-in the target directory.
+3️⃣ Run
 
-📄 Output Format (Report)
-The generated report includes:
+Open Command Prompt or PowerShell in the extracted directory
+and execute the binary:
 
-Investigator information
+4️⃣ Select Input Type
 
-System environment metadata
-
-Analysis timeline
-
-Keyword list
-
-File-by-file evidence tables
-
-Example structure:
-
-text
-
-[FILE] <img width="818" height="1013" alt="image" src="https://github.com/user-attachments/assets/6458c73f-056f-4546-b3fb-053af2407da9" />
-Security.evtx
-------------------------------------------------------------
-| No | Time (UTC)           | EventID | Summary
-Files without findings are excluded from the report.
-
-<img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/5dbc41ca-7545-45de-8089-f219de31562a" />
 <img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/af438e71-b001-4ea9-a9be-019363384360" />
+
+5️⃣ Enter Keywords
+
+6️⃣ Review Results
+
+Matching events are displayed in real time
+
+A summary is shown after the analysis completes
+
+7️⃣ Save Report (Optional)
+
 <img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/e6ac0805-931e-4c4b-8872-1fa51f3dac30" />
 
+
+
+---
+💡 Notes
+
+ELHunter is a portable CLI tool
+
+No installation is required
+
+Administrator privileges are not required
+
+Works with exported .evtx files
