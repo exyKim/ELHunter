@@ -1,0 +1,1 @@
+Set-Content -Path requirements.txt -Value "python-evtx==0.8.1"s
