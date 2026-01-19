@@ -107,6 +107,7 @@ A summary is shown after the analysis completes
 7️⃣ **Save Report (Optional)**
 
 <img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/e6ac0805-931e-4c4b-8872-1fa51f3dac30" />
+<img width="992" height="1018" alt="image" src="https://github.com/user-attachments/assets/259eaf32-e7f3-421a-988d-a4d176b4963f" />
 
 
 
@@ -117,4 +118,5 @@ A summary is shown after the analysis completes
 - No installation is required
 - Administrator privileges are not required
 - Works with exported .evtx files
+
 
