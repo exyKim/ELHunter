@@ -78,45 +78,43 @@ ELHunter operates in a **sequential, forensic-safe workflow**:
 
 ## ▶️ Usage
 
-1️⃣ Download
+1️⃣ **Download**
 
 Go to the Releases page and download the latest release archive.
 ELHunter_v1.0.zip
 
-2️⃣ Extract
+2️⃣ **Extract**
 
 Unzip the downloaded file to any directory.
 
-3️⃣ Run
+3️⃣ **Run**
 
 Open Command Prompt or PowerShell in the extracted directory
 and execute the binary:
 
-4️⃣ Select Input Type
+4️⃣ **Select Input Type**
 
 <img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/af438e71-b001-4ea9-a9be-019363384360" />
 
-5️⃣ Enter Keywords
+5️⃣ **Enter Keywords**
 
-6️⃣ Review Results
+6️⃣ **Review Results**
 
 Matching events are displayed in real time
 
 A summary is shown after the analysis completes
 
-7️⃣ Save Report (Optional)
+7️⃣ **Save Report (Optional)**
 
 <img width="737" height="810" alt="image" src="https://github.com/user-attachments/assets/e6ac0805-931e-4c4b-8872-1fa51f3dac30" />
 
 
 
 ---
-💡 Notes
+💡 **Notes**
 
-ELHunter is a portable CLI tool
+- ELHunter is a portable CLI tool
+- No installation is required
+- Administrator privileges are not required
+- Works with exported .evtx files
 
-No installation is required
-
-Administrator privileges are not required
-
-Works with exported .evtx files
