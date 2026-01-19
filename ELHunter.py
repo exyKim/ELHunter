@@ -3,7 +3,7 @@ import socket
 import getpass
 import time
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from Evtx.Evtx import Evtx
 
 BANNER = r"""
@@ -15,7 +15,7 @@ BANNER = r"""
 ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝ 
 
 ╔══════════════════════════════════════════╗
-║        ELHunter :: EVTX Forensic CLI     ║
+║      ELHunter :: EVTX Forensic CLI       ║
 ╠══════════════════════════════════════════╣
 ║  Evidence-driven Windows Event Analysis  ║
 ║  File-based Keyword Hunting & Reporting  ║
@@ -24,6 +24,15 @@ BANNER = r"""
 """
 
 # -------------------------------------------------------------------
+
+def utc_to_kst(utc_str):
+    try:
+        dt = datetime.strptime(utc_str, "%Y-%m-%dT%H:%M:%S.%fZ")
+    except ValueError:
+        dt = datetime.strptime(utc_str, "%Y-%m-%dT%H:%M:%SZ")
+
+    kst = dt + timedelta(hours=9)
+    return kst.strftime("%Y-%m-%d %H:%M:%S")
 
 def get_system_info():
     user = getpass.getuser()
@@ -40,13 +49,17 @@ def iter_evtx_files(folder):
             if name.lower().endswith(".evtx"):
                 yield os.path.join(root, name)
 
-# XML 요약 (가독성 핵심)
+# XML 요약
 def summarize_event(xml):
     time_m = re.search(r'SystemTime="([^"]+)"', xml)
     id_m = re.search(r'<EventID.*?>(\d+)</EventID>', xml)
     data_m = re.search(r'<Data Name="([^"]+)">([^<]+)</Data>', xml)
 
-    time_str = time_m.group(1).replace("T", " ").replace("Z", "") if time_m else "-"
+    if time_m:
+        time_str = utc_to_kst(time_m.group(1)) + " (KST)"
+    else:
+        time_str = "-"
+
     event_id = id_m.group(1) if id_m else "-"
     summary = f"{data_m.group(1)} = {data_m.group(2)}" if data_m else "Event detected"
 
